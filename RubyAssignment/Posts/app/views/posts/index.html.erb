@@ -1,0 +1,13 @@
+
+<h1 align='center'>Posts</h1>
+<h2 align='right'><%= link_to 'NEW POST',new_post_path%></h2>
+
+
+<% @post.each do |p| %>
+	<tr>
+	<td> <%= p.user_id %></td>
+	<td> <%= p.body %></td>
+	<td><h6 align='center'> <%= link_to 'Show',post_path(p)%></h6></td>
+	<br>
+	</tr>
+<% end %>

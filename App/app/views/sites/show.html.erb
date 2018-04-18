@@ -1,0 +1,26 @@
+
+<h2 align='right'><%= link_to 'Logout',sites_path %>
+<h1 align='center'> News Feed </h1>
+ </h2>
+   <h2><%= @site.username %></h2>
+
+
+   </br>
+
+   
+
+   <%= form_with(model: [ @site, statuses.build ], local: true) do |form| %>
+
+   <p>
+       <%= form.label :body%></br>
+       <%= form.text_area :body %>
+
+       </p>
+       </br>
+
+     <%= form.submit %>
+
+     <%end%>
+   
+  
+  

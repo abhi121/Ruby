@@ -1,0 +1,37 @@
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+class WGHTNUM {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		Scanner s = new Scanner(System.in);
+		long t = s.nextLong();
+		long x = 1000000007;
+		long output = 1;
+		long output1 = 1;
+		while (t-- > 0) {
+			long a = s.nextLong() % x;
+			long b = s.nextLong();
+			if (b != 0) {
+				if (b < 0) {
+					b = -(b);
+				}
+				b = b % x;
+				long n = 12 - a;
+				long k = a-2;
+				for (int i = 10; i > n; i--) {
+					output *= i;
+				}
+				for (int i = 1; i <= k; i++) {
+					output1 *= i;
+				}
+				output *= (9 - b);
+				output /= output1;
+				System.out.println(output % x);
+			} else {
+				System.out.println(0);
+			}
+		}
+	}
+}
+
